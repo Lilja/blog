@@ -1,6 +1,3 @@
-const path = require("path");
-import Mode from 'frontmatter-markdown-loader/mode'
-
 export default {
   mode: 'universal',
   /*
@@ -60,9 +57,9 @@ export default {
     ** You can extend webpack config here
     */
     extend (config, ctx) {
-     config.module.rules.push({
-      test: /\.md$/,
-      use: ['raw-loader']
+      config.module.rules.push({
+        test: /\.md$/,
+        use: ['raw-loader']
       })
     }
   }

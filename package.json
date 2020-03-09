@@ -14,7 +14,6 @@
   "dependencies": {
     "@nuxtjs/bulma": "^1.2.1",
     "front-matter": "^3.1.0",
-    "frontmatter-markdown-loader": "^3.2.1",
     "markdown-it": "^10.0.0",
     "nuxt": "^2.0.0"
   },

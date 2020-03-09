@@ -15,7 +15,7 @@ const md = require('markdown-it')({
   typographer: true
 })
 export default {
-  async asyncData({ params }) {
+  async asyncData({ params, error }) {
     try {
       const post = await import(`~/contents/${params.slug}.md`);
       const res = fm(post.default);
@@ -24,7 +24,8 @@ export default {
         content: md.render(res.body)
       };
     } catch (err) {
-      console.error('Erro rendering markdown', err);
+      console.error('Error rendering markdown', err);
+      error({ statusCode: 404, message: 'Post not found' })
       return false;
     }
   }
