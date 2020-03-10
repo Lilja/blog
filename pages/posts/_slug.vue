@@ -35,7 +35,7 @@
           <hr />
           <section class="content" v-html="content" />
           <section class="">
-            <div id="commento" />
+            <div id="commento"></div>
           </section>
           <footer class="footer">
             <div class="columns is-centered has-text-centered">
