@@ -20,3 +20,5 @@ $ yarn generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+Inspired by [regenrek's nuxt + markdown blog](https://regenrek.com/posts/create-a-frontmatter-markdown-powered-blog-with-nuxt.js/)

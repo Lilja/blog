@@ -1,0 +1,17 @@
+/* Specify in CSS */
+code { font-family: 'Fira Code', monospace; }
+
+@supports (font-variation-settings: normal) {
+  code { font-family: 'Fira Code VF', monospace; }
+}
+header {
+  margin-top: 3em;
+}
+.meta {
+  margin-top: 1em;
+}
+footer a, footer i {
+ text-decoration: none;
+ background-color: none;
+ color: grey;
+}

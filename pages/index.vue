@@ -25,14 +25,9 @@ export default {
       posts: imports
     }
   },
-  data () {
-    return {
-      prefix: 'posts'
-    }
-  },
   methods: {
     constructPermaLink (post) {
-      return `${this.prefix}/${post.link}`
+      return `posts/${post.link}`
     }
   }
 }
