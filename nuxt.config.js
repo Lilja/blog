@@ -16,7 +16,8 @@ export default {
       { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css' }
     ],
     scripts: [
-      { rel: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js' }
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js' },
+      { src: 'https://commento.dersand.net/js/commento.js' }
     ]
   },
   /*

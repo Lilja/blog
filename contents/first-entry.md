@@ -3,6 +3,7 @@ date: 2020-03-09
 title: My First Blog Post
 subtitle: Oh my god, Lilja is writing a blog!
 updated: 2020-03-10
+location: Stockholm, Sweden
 tags:
  - javascript
  - bash
@@ -44,4 +45,9 @@ def main():
 
 if __name__ == '__main__':
     main()
+```
+
+Scroll this!
+```bash
+git log --format=format: --name-only | egrep -v '^$' | sort | uniq -c | sort -rg | head -10
 ```

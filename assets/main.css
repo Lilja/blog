@@ -5,13 +5,35 @@ code { font-family: 'Fira Code', monospace; }
   code { font-family: 'Fira Code VF', monospace; }
 }
 header {
-  margin-top: 3em;
+  padding-top: 3em;
+  margin-left: 0;
+  margin-right: 0;
 }
 .meta {
-  margin-top: 1em;
+  padding-top: 1em;
 }
 footer a, footer i {
  text-decoration: none;
  background-color: none;
  color: grey;
+}
+
+body {
+ background-color: #292a2d;
+}
+.main {
+  background-color: #363c48;
+  color: white;
+}
+
+
+.author-image {
+  border-radius: 50%;
+}
+.author-image, .meta-info {
+  display: inline-block;
+}
+
+.title, .content h1, .content h2, .content h3 {
+  color: white;
 }

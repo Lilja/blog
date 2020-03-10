@@ -2,30 +2,31 @@
   <div role="section main">
     <div class="container">
       <div class="columns">
-        <div class="column is-8 is-offset-2">
+        <div class="column is-8 is-offset-2 main">
           <header>
             <h1 class="title">
               {{attributes.title}}
             </h1>
-            <h2 class="subtitle">
-              {{attributes.subtitle}}
-            </h2>
           </header>
           <section class="columns meta">
-            <div class="column is-one-third">
-              <address class="author">Erik Lilja</address>
-              <time :datetime="attributes.date">
-                {{isodate(attributes.date)}}
-              </time>
-              <meta itemprop="datePublished" :content="attributes.date.toISOString()" />
-              <div v-if="attributes.updated">
-                <strong>Updated</strong>
+            <div class="column is-half">
+              <img class="author-image" src="https://github.com/Lilja.png?size=75"/>
+              <div class="meta-info">
+                <address class="author">Erik Lilja</address>
+                Published
                 <time :datetime="attributes.date">
-                  {{isodate(attributes.updated)}}
+                  {{isodate(attributes.date)}}
                 </time>
+                <meta itemprop="datePublished" :content="attributes.date.toISOString()" />
+                <div v-if="attributes.updated">
+                  Updated
+                  <time :datetime="attributes.date">
+                    {{isodate(attributes.updated)}}
+                  </time>
+                </div>
               </div>
             </div>
-            <div class="column is-offset-5 tags">
+            <div class="column has-text-centered is-half tags">
               <span v-for="tag in attributes.tags" :key="tag" class="tag is-light level-item">
                 {{tag}}
               </span>
@@ -34,7 +35,7 @@
           <hr />
           <section class="content" v-html="content" />
           <section class="">
-            Add Comment section here!
+            <div id="commento" />
           </section>
           <footer class="footer">
             <div class="columns is-centered has-text-centered">
