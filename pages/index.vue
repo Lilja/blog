@@ -1,5 +1,6 @@
 <template>
   <div>
+    <navbar />
     <h1>My blog posts</h1>
     <ul>
       <li v-for="post in posts" :key="post.title">
@@ -11,8 +12,12 @@
   </div>
 </template>
 <script>
+import navbar from '~/components/navbar'
 const fm = require('front-matter')
 export default {
+  components: {
+    navbar
+  },
   asyncData () {
     const resolve = require.context('~/contents/', true, /\.md$/)
     const imports = resolve.keys().map((key) => {

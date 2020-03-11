@@ -5,7 +5,6 @@ code { font-family: 'Fira Code', monospace; }
   code { font-family: 'Fira Code VF', monospace; }
 }
 header {
-  padding-top: 3em;
   margin-left: 0;
   margin-right: 0;
 }
@@ -15,14 +14,17 @@ header {
 footer a, footer i {
  text-decoration: none;
  background-color: none;
- color: grey;
+ color: white;
 }
-
+html, body, .navbar, .navbar-item {
+    background-color: #222831;
+    color: white;
+}
 body {
- background-color: #292a2d;
+ /*background-color: #292a2d;*/
 }
-.main {
-  background-color: #363c48;
+div[role="main"] {
+  background-color: #393e46;
   color: white;
 }
 
