@@ -35,7 +35,11 @@
           <hr />
           <section class="content" v-html="content" />
           <section class="">
-            <div id="commento"></div>
+            Commento should be below.
+            <client-only placeholder="Loading comments">
+              <div id="commento"></div>
+              <script src="https://commento.dersand.net/js/commento.js" defer="true"></script>
+            </client-only>
           </section>
           <footer class="footer">
             <div class="columns is-centered has-text-centered">
