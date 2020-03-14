@@ -6,10 +6,10 @@ const getPaths = () =>
     .map((filename) => `/posts/${path.parse(filename).name}`)
 
 export default {
-  mode: 'universal',
   generate: {
     getPaths()
   },
+  mode: 'universal',
   /*
   ** Headers of the page
   */
