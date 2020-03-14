@@ -22,4 +22,4 @@ jobs:
         docker build . --file Dockerfile -t lilja/blog:latest -t lilja/blog:$VERSION;
     - name: Push image to docker hub
       run: docker push lilja/blog
-          
+
