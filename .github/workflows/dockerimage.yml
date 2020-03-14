@@ -14,9 +14,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Login to docker hub
+      run: echo "${{ secrets.PUSH_TOKEN }}" | docker login --username lilja --password-stdin;
     - name: Build the Docker image
-      run:
-        echo "${secrets.PUSH_TOKEN}" | docker login --username lilja --password-stdin;
-        docker build . --file Dockerfile --tag lilja/blog:${GITHUB_SHA};
-        docker push lilja/blog
+      run: docker build . --file Dockerfile --tag lilja/blog:${GITHUB_SHA};
+    - name: Push image to docker hub
+      run: docker push lilja/blog
           
