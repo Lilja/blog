@@ -16,7 +16,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build the Docker image
       run:
-        echo "${PUSH_TOKEN}" | docker login --username lilja --password-stdin;
+        echo "${secrets.PUSH_TOKEN}" | docker login --username lilja --password-stdin;
         docker build . --file Dockerfile --tag lilja/blog:${GITHUB_SHA};
         docker push lilja/blog
           
