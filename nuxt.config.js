@@ -6,9 +6,6 @@ const getPaths = () =>
     .map((filename) => `/posts/${path.parse(filename).name}`)
 
 export default {
-  generate: {
-    getPaths()
-  },
   mode: 'universal',
   /*
   ** Headers of the page
@@ -40,6 +37,9 @@ export default {
     '@/assets/main.css',
     '@/assets/commento.css'
   ],
+  generate: {
+      routes: getPaths()
+  },
   /*
   ** Plugins to load before mounting the App
   */
