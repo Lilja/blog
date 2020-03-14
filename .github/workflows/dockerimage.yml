@@ -23,5 +23,4 @@ jobs:
     - name: Push image to docker hub
       run: docker push lilja/blog
     - name: Update production container
-      run: curl "https://ybae.dersand.net?token=${{ secrets.YBAE_TOKEN }}&container=blog"
-
+      run: curl "https://ybae.dersand.net?token=${{ secrets.YBAE_TOKEN }}&container=blog&registry=public"
