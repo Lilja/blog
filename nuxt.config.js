@@ -1,5 +1,15 @@
+import * as path from 'path'
+const getPaths = () =>
+  fs
+    .readdirSync(path.resolve(__dirname, 'contents'))
+    .filter((filename) => path.extname(filename) === '.md')
+    .map((filename) => `/posts/${path.parse(filename).name}`)
+
 export default {
   mode: 'universal',
+  generate: {
+    getPaths()
+  },
   /*
   ** Headers of the page
   */

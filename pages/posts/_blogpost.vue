@@ -92,7 +92,7 @@ export default {
   },
   async asyncData({ params, error }) {
     try {
-      const post = await import(`~/contents/${params.slug}.md`);
+      const post = await import(`~/contents/${params.blogpost}.md`);
       const res = fm(post.default);
       console.log('Spook', res.attributes)
       return {
