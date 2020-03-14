@@ -15,9 +15,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Login to docker hub
-      run: echo "${{ secrets.PUSH_TOKEN }}" | docker login --username lilja --password-stdin;
+      run: echo "${{ secrets.PUSH_TOKEN }}" | docker login --username lilja --password-stdin;
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag lilja/blog:${GITHUB_SHA};
+      run: |
+        VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
+        docker build . --file Dockerfile -t lilja/blog:latest -t lilja/blog:$VERSION;
     - name: Push image to docker hub
       run: docker push lilja/blog
           
