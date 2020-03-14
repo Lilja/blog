@@ -1,6 +1,7 @@
 <template>
-  <div role="section main">
-    <div class="container">
+  <div role="main">
+    <navbar />
+    <div class="container blog-post">
       <div class="columns">
         <div class="column is-8 is-offset-2 main">
           <header>
@@ -10,7 +11,7 @@
           </header>
           <section class="columns meta">
             <div class="column is-half">
-              <img class="author-image" src="https://github.com/Lilja.png?size=75"/>
+              <img class="author-image" src="https://github.com/Lilja.png"/>
               <div class="meta-info">
                 <address class="author">Erik Lilja</address>
                 Published
@@ -34,11 +35,14 @@
           </section>
           <hr />
           <section class="content" v-html="content" />
-          <section class="">
+          <section>
             Commento should be below.
             <client-only placeholder="Loading comments">
               <div id="commento"></div>
-              <script src="https://commento.dersand.net/js/commento.js" defer="true"></script>
+              <script
+                src="https://commento.dersand.net/js/commento.js"
+                defer="true"
+              ></script>
             </client-only>
           </section>
           <footer class="footer">
@@ -66,6 +70,7 @@ import python from 'highlight.js/lib/languages/python'
 import json from 'highlight.js/lib/languages/json'
 hljs.registerLanguage('json', json)
 hljs.registerLanguage('python', python)
+import navbar from '~/pages/navbar'
 
 const fm = require('front-matter')
 const markdownOptions = {
@@ -77,10 +82,13 @@ const highlightJsPlugin = require('markdown-it-highlightjs')
 const md = require('markdown-it')(markdownOptions).use(highlightJsPlugin, {})
 
 export default {
+  components: {
+    navbar
+  },
   methods: {
     isodate(d) {
       return d.toISOString().substring(0,10)
-    },
+    }
   },
   async asyncData({ params, error }) {
     try {
@@ -99,3 +107,16 @@ export default {
   }
 };
 </script>
+
+<style lang="css">
+.blog-post {
+  margin-top: 3em;
+}
+.meta-info {
+  margin-left: 1em;
+}
+.footer {
+  background-color: #222831;
+}
+
+</style>

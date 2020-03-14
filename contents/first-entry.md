@@ -7,6 +7,9 @@ location: Stockholm, Sweden
 tags:
  - javascript
  - bash
+description: >
+  Small description that hopefully gives you a taste of this blog
+
 ---
 
 # Test headline

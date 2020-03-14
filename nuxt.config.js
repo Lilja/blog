@@ -16,7 +16,7 @@ export default {
       { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css' }
     ],
     script: [
-      { src: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js' },
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js' }
     ]
   },
   /*
@@ -27,7 +27,8 @@ export default {
   ** Global CSS
   */
   css: [
-    '@/assets/main.css'
+    '@/assets/main.css',
+    '@/assets/commento.css'
   ],
   /*
   ** Plugins to load before mounting the App

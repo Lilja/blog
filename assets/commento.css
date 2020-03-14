@@ -1,0 +1,41 @@
+/* Commento.io overrides */
+.commento-root * {
+  color: white !important;
+}
+.commento-name {
+  color: white !important;
+}
+.commento-option-collapse {
+  color: white !important;
+}
+.commento-option-button {
+  background: #ced4da !important;
+}
+
+.commento-root input[type='text'] {
+  color: black !important;
+}
+.commento-root input[type='password'] {
+  color: black !important;
+}
+.commento-root textarea {
+  color: black !important;
+}
+.commento-root code {
+  color: black !important;
+}
+#commento-login-box {
+  background: #5b5768 !important;
+}
+.commento-email-button {
+  color: #1c7ed6 !important;
+}
+#commento pre {
+  background-color: inherit;
+}
+
+/*
+#commento-textarea-root {
+
+}
+*/

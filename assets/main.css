@@ -13,29 +13,34 @@ header {
 }
 footer a, footer i {
  text-decoration: none;
- background-color: none;
- color: white;
+ color: #00adb5;
 }
-html, body, .navbar, .navbar-item {
-    background-color: #222831;
-    color: white;
+.navbar, .navbar-item {
+  background-color: #222831;
+  color: white;
 }
-body {
- /*background-color: #292a2d;*/
+body, .subtitle {
+  color: white;
 }
-div[role="main"] {
+html {
   background-color: #393e46;
   color: white;
 }
-
 
 .author-image {
   border-radius: 50%;
 }
 .author-image, .meta-info {
   display: inline-block;
+  vertical-align: middle;
+}
+.author-image {
+  width: 25%;
 }
 
 .title, .content h1, .content h2, .content h3 {
   color: white;
+}
+.blog-separator {
+  border-top: dotted 1px;
 }
