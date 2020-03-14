@@ -5,6 +5,6 @@ RUN yarn install && npx nuxt generate
 
 FROM flashspys/nginx-static
 RUN apk update && apk upgrade
-COPY dist /static
+RUN cp -r dist /static
 
 
