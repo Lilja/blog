@@ -56,6 +56,5 @@ pre {
 }
 .blog-post-content a {
   color: #00adb5;
-  text-decoration: cursive;
-
+  font-style: italic;
 }
