@@ -34,9 +34,8 @@
             </div>
           </section>
           <hr />
-          <section class="content" v-html="content" />
+          <section class="blog-post-content content" v-html="content" />
           <section>
-            Commento should be below.
             <client-only placeholder="Loading comments">
               <div id="commento"></div>
               <script
@@ -65,7 +64,7 @@
 </template>
 <script>
 import hljs from 'highlight.js'
-import 'highlight.js/styles/github.css'
+import 'highlight.js/styles/darcula.css'
 import python from 'highlight.js/lib/languages/python'
 import json from 'highlight.js/lib/languages/json'
 hljs.registerLanguage('json', json)
@@ -109,8 +108,8 @@ export default {
 </script>
 
 <style lang="css">
-.blog-post {
-  margin-top: 3em;
+.blog-post > .columns > .column:first-child {
+  padding-top: 3em;
 }
 .meta-info {
   margin-left: 1em;

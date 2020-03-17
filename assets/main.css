@@ -15,6 +15,13 @@ footer a, footer i {
  text-decoration: none;
  color: #00adb5;
 }
+/* Not last child because it's the footer. */
+.container .column {
+  background-color: #393e46;
+}
+.container .footer .column {
+  background-color: inherit;
+}
 .navbar, .navbar-item {
   background-color: #222831;
   color: white;
@@ -23,7 +30,7 @@ body, .subtitle {
   color: white;
 }
 html {
-  background-color: #393e46;
+  background-color: #454b54;
   color: white;
 }
 
@@ -43,4 +50,12 @@ html {
 }
 .blog-separator {
   border-top: dotted 1px;
+}
+pre {
+  background-color: #2b2b2b;
+}
+.blog-post-content a {
+  color: #00adb5;
+  text-decoration: cursive;
+
 }
