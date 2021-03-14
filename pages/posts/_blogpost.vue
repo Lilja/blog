@@ -62,38 +62,45 @@
     </div>
   </div>
 </template>
-<script>
+<script lang="ts">
 import hljs from 'highlight.js'
 import 'highlight.js/styles/darcula.css'
 import python from 'highlight.js/lib/languages/python'
 import json from 'highlight.js/lib/languages/json'
 hljs.registerLanguage('json', json)
 hljs.registerLanguage('python', python)
-import navbar from '~/pages/navbar'
+import navbar from '../navbar.vue'
+import fm from 'front-matter'
 
-const fm = require('front-matter')
 const markdownOptions = {
   html: true,
   linkify: true,
   typographer: true
 }
-const highlightJsPlugin = require('markdown-it-highlightjs')
+import highlightJsPlugin from 'markdown-it-highlightjs'
 const md = require('markdown-it')(markdownOptions).use(highlightJsPlugin, {})
 
+type ErrorFn = {
+  statusCode: number,
+  message: string
+}
+type AsyncDataType = {
+  params: {[key: string]: string},
+  error: (arg0: ErrorFn) => void
+}
 export default {
   components: {
     navbar
   },
   methods: {
-    isodate(d) {
+    isodate(d: Date) {
       return d.toISOString().substring(0,10)
     }
   },
-  async asyncData({ params, error }) {
+  async asyncData({ params, error }: AsyncDataType) {
     try {
       const post = await import(`~/contents/${params.blogpost}.md`);
       const res = fm(post.default);
-      console.log('Spook', res.attributes)
       return {
         attributes: res.attributes,
         content: md.render(res.body)
