@@ -18,7 +18,7 @@
                 {{ isodate(post.date) }}
               </time>
               {{ post.description }}
-              <hr class="blog-separator"></hr>
+              <hr class="blog-separator">
             </li>
           </ul>
         </div>
@@ -26,9 +26,11 @@
     </div>
   </div>
 </template>
-<script>
-import navbar from '~/pages/navbar'
-const fm = require('front-matter')
+<script lang="ts">
+import fm from 'front-matter'
+import { Post } from '../types'
+import navbar from './navbar.vue'
+
 export default {
   components: {
     navbar
@@ -36,7 +38,11 @@ export default {
   asyncData () {
     const resolve = require.context('~/contents/', true, /\.md$/)
     const imports = resolve.keys().map((key) => {
-      const [, name] = key.match(/\/(.+)\.md$/)
+      const match = key.match(/\/(.+)\.md$/)
+      if (!match) {
+        throw new Error('no markdown files found')
+      }
+      const [, name] = match
       const attributes = fm(resolve(key).default).attributes
       const permalink = { link: name }
       return Object.assign({}, attributes, permalink)
@@ -46,10 +52,10 @@ export default {
     }
   },
   methods: {
-    constructPermaLink (post) {
+    constructPermaLink (post: Post) {
       return `posts/${post.link}`
     },
-    isodate (d) {
+    isodate (d: Date) {
       return d.toISOString().substring(0, 10)
     }
   }
