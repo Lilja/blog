@@ -20,6 +20,7 @@
     "nuxt": "^2.0.0"
   },
   "devDependencies": {
+    "@babel/compat-data": "7.9.0",
     "@nuxtjs/eslint-config": "^2.0.0",
     "@nuxtjs/eslint-module": "^1.0.0",
     "babel-eslint": "^10.0.1",
