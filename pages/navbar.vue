@@ -3,7 +3,7 @@
     <nav class="navbar">
       <div class="navbar-brand">
         <a class="navbar-item" href="/">
-          <img src="~/assets/logo.:ng">
+          <img src="~/assets/logo.png" >
         </a>
       </div>
       <div class="navbar-menu">
