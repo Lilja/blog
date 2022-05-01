@@ -28,8 +28,9 @@
 </template>
 <script lang="ts">
 import fm from 'front-matter'
-import { Post } from '../types'
+import type { Post } from '../types'
 import navbar from './navbar.vue'
+
 
 export default {
   components: {
